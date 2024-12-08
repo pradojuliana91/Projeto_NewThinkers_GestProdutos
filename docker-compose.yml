@@ -1,0 +1,30 @@
+version: '3.8'
+
+volumes:
+  sqlserver_data:
+  
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: db_GestProduto_sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong@Passw0rd
+      - MSSQL_PID=Developer
+    ports:
+      - 1433:1433
+    volumes:
+      - ./init.sql:/tmp/mssql-init.sql 
+    command: >
+      /bin/bash -c "
+      /opt/mssql/bin/sqlservr &
+
+      until /opt/mssql-tools18/bin/sqlcmd -l 1 -S localhost -U sa -P YourStrong@Passw0rd -C -Q 'SELECT 1' &> /dev/null; do
+        >&2 echo '>>>>>>>>>> SQL Server is unavailable - sleeping <<<<<<<<<<';
+        sleep 5;
+      done;
+      echo '>>>>>>>>>> SQL Server is ready - executing init script <<<<<<<<<<';
+      /opt/mssql-tools18/bin/sqlcmd -l 5 -S localhost -U sa -P YourStrong@Passw0rd -C -d master -i /tmp/mssql-init.sql;
+
+      sleep infinity;"      
+    restart: no

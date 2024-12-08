@@ -1,0 +1,9 @@
+Para subir o banco de dados basta utilizar no visual studio com o prompt "Prompt de Comando do Desenvolvedor" apontando o diretório na raiz do projeto
+
+Utilizar as seguintes linhas de código para subir e desligar o docker relacionado ao banco para depois funcionar a aplicação:
+
+Comando Start Banco:
+docker-compose up -d
+
+Comando Desligar Docker:
+docker-compose down
