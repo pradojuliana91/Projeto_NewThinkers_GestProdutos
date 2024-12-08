@@ -88,24 +88,22 @@ Abaixo está um exemplo de requisição feita via Postman:
 
 - Método: POST
 - URL: http://localhost:5083/login
-- Headers:
-  ![image](https://github.com/user-attachments/assets/6945544d-000e-4212-bad6-a5f62e5a739e)
 - Body (Exemplo de JSON)
 - Envie os seguintes dados na aba Body, selecionando a opção raw e configurando como JSON:
-  ![image](https://github.com/user-attachments/assets/b87f6c13-d2bf-4d2f-86aa-34d5b2f8a637)
-- Resposta Esperada
-- Se as credenciais forem válidas, a API retornará um token JWT no seguinte formato:
-  ![image](https://github.com/user-attachments/assets/8241332a-b7a4-47b1-a9b7-35f852524275)
+  ![image](https://github.com/user-attachments/assets/c5c38997-f7a9-4ce7-aa03-47e214b26f24)
+- Resposta Esperada:
+  - Se as credenciais forem válidas, a API retornará um token JWT no seguinte formato:
+  ![image](https://github.com/user-attachments/assets/6e3f07f0-5b41-411c-908c-24ae9a6abefd)
 - Passo Seguinte: Cadastro de Produto
 - Método: POST
 - URL: http://localhost:5083/produtos
 - Depois de obter o token, insira-o no cabeçalho de autorização para realizar o cadastro de produtos, como descrito no próximo exemplo.
-  ![image](https://github.com/user-attachments/assets/d706d593-21cf-415b-ae3c-4aa1c55686d4)
+  ![image](https://github.com/user-attachments/assets/6d8f53f7-e792-467c-b1bb-1906b3e89e83)
 - Requisição de Cadastro de Produto
-- No Body, você irá enviar os dados do produto a ser cadastrado.
-- Exemplo de Body (Cadastro de Produto)
-  ![image](https://github.com/user-attachments/assets/bb5d89e7-dbe7-4ad0-888c-b78136750fd6)
-  ![image](https://github.com/user-attachments/assets/8872d0fb-470f-4f28-a390-e5bbc005e163)
+  - No Body, você irá enviar os dados do produto a ser cadastrado.
+  - Exemplo de Body (Cadastro de Produto)
+  ![image](https://github.com/user-attachments/assets/c072f5f1-5ab0-4632-9968-5e825ec07b49)
+  ![image](https://github.com/user-attachments/assets/dfbde9cc-e0cd-47a2-a73a-d7121cd87d4e) 
    
 ## Contribuições   
   
